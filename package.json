@@ -1,5 +1,5 @@
 {
-  "name": "electron-pos-printer",
+  "name": "modified-pos-printer",
   "version": "1.2.4",
   "description": "Electron thermal 58mm printer",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hubertformin/electron-pos-printer.git"
+    "url": "git+https://github.com/Gruce/electron-pos-printer.git"
   },
   "keywords": [
     "electron",
@@ -26,9 +26,9 @@
   "author": "Hubertformin <hformin@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hubertformin/electron-pos-printer/issues"
+    "url": "https://github.com/Gruce/electron-pos-printer//issues"
   },
-  "homepage": "https://github.com/Hubertformin/electron-pos-printer#readme",
+  "homepage": "https://github.com/Gruce/electron-pos-printer/#readme",
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",

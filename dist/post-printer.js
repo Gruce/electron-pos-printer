@@ -89,7 +89,12 @@ var PosPrinter = /** @class */ (function () {
                 height: 1200,
                 show: !!options.preview,
                 webPreferences: {
+                    nativeWindowOpen: true,
                     nodeIntegration: true,
+                    enableRemoteModule: true,
+                    webSecurity: true,
+                    contextIsolation: false,
+                    webviewTag: true,
                 }
             });
             // mainWindow
@@ -133,8 +138,13 @@ var PosPrinter = /** @class */ (function () {
                              *
                              */
                             return [2 /*return*/, PosPrinter.renderPrintDocument(mainWindow, data)
-                                    .then(function () {
-                                    if (!options.preview) {
+                                    .then(async function () {
+                                    const delay = millis => new Promise((resolve, reject) => {
+                                        setTimeout(_ => resolve(), millis)
+                                    });
+                                    await delay(100);
+    
+                                    // if (!options.preview) {
                                         mainWindow.webContents.print({
                                             silent: !!options.silent,
                                             printBackground: true,
@@ -153,10 +163,10 @@ var PosPrinter = /** @class */ (function () {
                                             }
                                             mainWindow.close();
                                         });
-                                    }
-                                    else {
-                                        resolve({ complete: true });
-                                    }
+                                    // }
+                                    // else {
+                                    //     resolve({ complete: true });
+                                    // }
                                 })
                                     .catch(function (err) { return reject(err); })];
                     }
